@@ -1,0 +1,24 @@
+import React from 'react';
+import { ImStatsDots } from 'react-icons/im';
+import { RiHome2Line, RiTimeLine } from 'react-icons/ri';
+import { NavLink } from 'react-router';
+import logo from '../assets/images/logo.png'
+const Navbar = () => {
+    return (
+        <div>
+            <div className="navbar bg-base-100 shadow-sm py-2 md:py-5 px-[1%] md:px-[5%]">
+                <div className="navbar-start">
+
+                    <img src={logo} alt='logo'></img>
+                </div>
+                <div className="navbar-end">
+                    <NavLink to={'/'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><RiHome2Line /></span>Home</NavLink>
+                    <NavLink to={'/timeline'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><RiTimeLine /> </span>Timeline</NavLink>
+                    <NavLink to={'/stats'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><ImStatsDots /></span>Stats</NavLink>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Navbar;
