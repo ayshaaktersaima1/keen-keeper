@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         Component: Homepage
       },
       {
-        path: '/friendsDetails',
+        path: '/friendsDetails/:paramId',
         Component: FriendsDetails
       },
       {
