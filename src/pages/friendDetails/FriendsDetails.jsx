@@ -2,6 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router';
 import UseFriends from '../../hooks/UseFriends';
 import { ScaleLoader } from 'react-spinners';
+import { RiDeleteBin5Line, RiNotificationSnoozeLine } from 'react-icons/ri';
+import { FiArchive } from 'react-icons/fi';
+import callImg from '../../assets/images/call.png'
+import textImg from '../../assets/images/text.png'
+import videoImg from '../../assets/images/video.png'
 
 const FriendsDetails = () => {
     const { paramId } = useParams();
@@ -15,9 +20,90 @@ const FriendsDetails = () => {
     return (
         <div>
             <div className='px-[1%] md:px-[14%]  bg-[#f8fafc] md:py-20'>
-                <div className='grid grid-cols-3'>
-                    <div className='col-span-1 bg-amber-600'>1</div>
-                    <div className='col-span-2 bg-blue-950'>2</div>
+                <div className='grid grid-cols-3 gap-6'>
+                    {/* left side */}
+                    <div className='col-span-1 flex flex-col justify-center text-center'>
+                        <div className='border border-[#e9e9e9] shadow-lg rounded-lg px-10 py-6 mb-4'>
+                            <div className='flex justify-center mb-3'><img className='w-20 h-20 rounded-full' src={friendDetail.picture} alt="" /></div>
+                            <h1 className='text-xl font-semibold mb-2 primary-color'>{friendDetail.name}</h1>
+                            <div className={`badge text-white p-2 rounded-3xl text-xs font-medium capitalize mb-2 ${friendDetail.status === 'on-track' ? 'bg-[#244d3f]' : friendDetail.status === 'overdue' ? 'bg-[#ef4444]' : friendDetail.status === 'almost due' ? 'bg-[#efad44]' : ''}`}>{friendDetail.status}</div>
+
+
+                            <div className='flex justify-center gap-2 mb-3'>
+                                {
+                                    friendDetail.tags.map(tag => (<div className='badge uppercase bg-[#cbfadb] rounded-3xl text-[#244d3f] text-xs font-medium px-3'>{tag}</div>
+                                    ))
+                                }
+                            </div>
+                            <div className='font-medium italic sec-color mb-3'>"{friendDetail.bio}"</div>
+                            <p className='text-sm sec-color'>{friendDetail.email}</p>
+                        </div>
+                        {/* 2 */}
+                        <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-4 mb-2'>
+                            <h1 className='primary-color font-medium flex justify-center items-center gap-2'><span className='text-xl'><RiNotificationSnoozeLine /></span>Snooze 2 weeks</h1>
+                        </div>
+                        {/* 3 */}
+                        <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-4 mb-2'>
+                            <h1 className='primary-color font-medium flex justify-center items-center gap-2'><span className='text-xl'><FiArchive /></span>Archive</h1>
+                        </div>
+                        {/* 4 */}
+                        <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-4 mb-2'>
+                            <h1 className='text-[#ef4444] font-medium flex justify-center items-center gap-2'><span className='text-xl'><RiDeleteBin5Line /></span>Delete</h1>
+                        </div>
+                    </div>
+
+                    {/* right side */}
+                    <div className='col-span-2 space-y-6'>
+                        <div className='grid grid-cols-3 gap-6'>
+                            <div className='py-8 flex flex-col justify-center items-center bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
+                                <h1 className='text-[#244d3f] text-3xl font-semibold'>{friendDetail.days_since_contact}</h1>
+                                <p className='sec-color font-semibold'>Days Since Contact</p>
+                            </div>
+                            {/* 2 */}
+                            <div className='py-8 flex flex-col justify-center items-center bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
+                                <h1 className='text-[#244d3f] text-3xl font-semibold'>{friendDetail.goal}</h1>
+                                <p className='sec-color font-semibold'>Goal (Days)</p>
+                            </div>
+                            {/* 3 */}
+                            <div className='py-8 flex flex-col justify-center items-center bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
+                                <h1 className='text-[#244d3f] text-3xl font-semibold'>{friendDetail.next_due_date}</h1>
+                                <p className='sec-color font-semibold'>Next Due</p>
+                            </div>
+
+                        </div>
+
+                        {/* second row */}
+                        <div className='p-6 bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-lg font-medium text-[#244d3f] pb-5'>Relationship Goal</h1>
+                                <button className='btn bg-[#f8fafc] rounded-sm shadow-sm primary-color'>Edit</button>
+                            </div>
+                            <p className='text-lg sec-color'>Connect every <span className='primary-color font-bold'>30 days</span></p>
+                        </div>
+
+                        {/* 3rd raw */}
+                        <div className='p-6 bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
+                            <h1 className='text-lg font-medium text-[#244d3f] pb-5'>Quick Check-In</h1>
+
+                            <div className='grid grid-cols-3 gap-4'>
+                                {/* 1 */}
+                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><img className='h-6 w-6' src={callImg} alt="" /></div>
+                                    <h2 className='text-lg primary-color pt-2'>Call</h2>
+                                </div>
+                                {/* 2 */}
+                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><img className='h-6 w-6' src={textImg} alt="" /></div>
+                                    <h2 className='text-lg primary-color pt-2'>Text</h2>
+                                </div>
+                                {/* 3 */}
+                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><img className='h-6 w-6' src={videoImg} alt="" /></div>
+                                    <h2 className='text-lg primary-color pt-2'>Video</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
