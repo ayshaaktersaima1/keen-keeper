@@ -10,6 +10,7 @@ import Timeline from './pages/timeline/Timeline.jsx';
 import States from './pages/stats/States.jsx';
 import FriendsContextProvider from './context/FriendsContextProvider.jsx';
 import TimelineContextProvider from './context/TimelineContextProvider.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
         path: '/stats',
         Component: States
       }
-    ]
+    ],
+    errorElement: <NotFoundPage></NotFoundPage>
   },
 
 ]);

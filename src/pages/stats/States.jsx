@@ -25,7 +25,7 @@ const States = () => {
                 <p className='text-xl font-medium text-[#244d3f]'>By Interaction Type</p>
 
                 {
-                    checkIns.length === 0 ? <h1 className='text-center primary-color min-h-[40vh]'>No data Found!</h1> :
+                    checkIns.length === 0 ? <h1 className='text-center primary-color min-h-[40vh]'>No intercations logged yet.</h1> :
 
                         (<>
                             <div className='flex justify-center py-10'>

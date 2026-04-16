@@ -7,6 +7,7 @@ import { FiArchive } from 'react-icons/fi';
 import { FriendsContext } from '../../context/FriendsContextProvider';
 import { LuPhoneCall, LuVideo } from 'react-icons/lu';
 import { MdOutlineTextsms } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 
 const FriendsDetails = () => {
@@ -26,6 +27,7 @@ const FriendsDetails = () => {
             type
         };
         setCheckIns([...checkIns, newCheckIn]);
+        toast.success(`${newCheckIn.type} with ${newCheckIn.name}`)
     }
     return (
         <div>
