@@ -1,32 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FriendsContext } from '../../context/FriendsContextProvider';
 import TimelineCard from './TimelineCard';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { TimelineContext } from '../../context/TimelineContextProvider';
 
 
 const Timeline = () => {
     const { checkIns } = useContext(FriendsContext);
-    const { timelineTypeCount, setTimelineTypeCount } = useContext(TimelineContext);
 
     const [filter, setFilter] = useState('Filter timeline');
 
     const handleFilter = (type) => {
         setFilter(type);
     }
-
-    const callType = checkIns.filter(checkIn => checkIn.type === 'Call');
-    const textType = checkIns.filter(checkIn => checkIn.type === 'Text');
-    const videoType = checkIns.filter(checkIn => checkIn.type === 'Video');
-
-    const callTypeCount = callType.length;
-    const textTypeCount = textType.length;
-    const videoTypeCount = videoType.length;
-
-    const newObj = { callTypeCount, textTypeCount, videoTypeCount };
-    useEffect(() => {
-        setTimelineTypeCount(newObj);
-    }, [checkIns]);
 
     const filterCheckIns = checkIns.filter(checkIn => checkIn.type === filter);
     return (
@@ -45,7 +30,7 @@ const Timeline = () => {
             </div>
             <div className='space-y-6'>
                 {
-                    filter === 'Filter timeline' ?
+                    checkIns.length === 0 ? <h1 className='text-center primary-color min-h-[40vh]'>No data Found!</h1> : filter === 'Filter timeline' ?
                         (checkIns.map((checkIn, index) => <TimelineCard key={index} checkIn={checkIn}></TimelineCard>)) :
 
                         (filterCheckIns.map((checkIn, index) => <TimelineCard key={index} checkIn={checkIn}></TimelineCard>))

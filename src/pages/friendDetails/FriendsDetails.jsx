@@ -88,7 +88,7 @@ const FriendsDetails = () => {
                                 <h1 className='text-lg font-medium text-[#244d3f] pb-5'>Relationship Goal</h1>
                                 <button className='btn bg-[#f8fafc] rounded-sm shadow-sm primary-color'>Edit</button>
                             </div>
-                            <p className='text-lg sec-color'>Connect every <span className='primary-color font-bold'>30 days</span></p>
+                            <p className='text-lg sec-color'>Connect every <span className='primary-color font-bold'>{friendDetail.goal} days</span></p>
                         </div>
 
                         {/* 3rd raw */}
