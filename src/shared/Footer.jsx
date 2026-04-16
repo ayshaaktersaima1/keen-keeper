@@ -5,10 +5,10 @@ import { FaSquareFacebook, FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-horizontal footer-center bg-[#244d3f] text-primary-content p-12">
+            <footer className="w-full footer footer-horizontal footer-center bg-[#244d3f] text-primary-content p-5 md:p-12">
                 <aside>
-                    <h1 className='text-7xl text-white font-semibold pb-4'>KeenKeeper</h1>
-                    <p className='text-white pb-6'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                    <h1 className='text-4xl md:text-7xl text-white font-semibold pb-4'>KeenKeeper</h1>
+                    <p className='text-white pb-6 w-auto md:w-[76%]'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <div>
                         <h1 className='text-white text-xl font-medium pb-4'>Social Links</h1>
                         <nav>
@@ -29,8 +29,8 @@ const Footer = () => {
                     </div>
 
                 </aside>
-                <hr className='border-white opacity-20 w-[76%] mt-6' />
-                <div className='flex justify-between w-[76%] text-white opacity-60'>
+                <hr className='border-white opacity-20 w-full md:w-[76%]  mt-1 md:mt-6' />
+                <div className='flex flex-col md:flex-row justify-between w-full md:w-[76%] text-white opacity-60'>
                     <div>© 2026 KeenKeeper. All rights reserved.</div>
                     <div className='flex justify-center gap-5 '>
                         <p>Privacy Policy </p>

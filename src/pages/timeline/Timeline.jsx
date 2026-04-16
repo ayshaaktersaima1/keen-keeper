@@ -15,8 +15,8 @@ const Timeline = () => {
 
     const filterCheckIns = checkIns.filter(checkIn => checkIn.type === filter);
     return (
-        <div className='px-[1%] md:px-[14%] bg-[#f8fafc] py-20'>
-            <h1 className='primary-color text-5xl font-bold pb-6'>Timeline </h1>
+        <div className='px-[1%] md:px-[14%] bg-[#f8fafc] py-10 md:py-20'>
+            <h1 className='primary-color text-3xl md:text-5xl font-bold pb-3 md:pb-6'>Timeline </h1>
 
             {/* dropdown */}
             <div className="dropdown bg-[#f8fafc] mb-6">

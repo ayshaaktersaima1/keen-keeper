@@ -32,9 +32,9 @@ const FriendsDetails = () => {
     return (
         <div>
             <div className='px-[1%] md:px-[14%]  bg-[#f8fafc] md:py-20'>
-                <div className='grid grid-cols-3 gap-6'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
                     {/* left side */}
-                    <div className='col-span-1 flex flex-col justify-center text-center'>
+                    <div className='col-span-3 lg:col-span-1 flex flex-col justify-center text-center'>
                         <div className='border border-[#e9e9e9] shadow-lg rounded-lg px-10 py-6 mb-4'>
                             <div className='flex justify-center mb-3'><img className='w-20 h-20 rounded-full' src={friendDetail.picture} alt="" /></div>
                             <h1 className='text-xl font-semibold mb-2 primary-color'>{friendDetail.name}</h1>
@@ -65,8 +65,8 @@ const FriendsDetails = () => {
                     </div>
 
                     {/* right side */}
-                    <div className='col-span-2 space-y-6'>
-                        <div className='grid grid-cols-3 gap-6'>
+                    <div className='col-span-3 lg:col-span-2 space-y-6'>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6'>
                             <div className='py-8 flex flex-col justify-center items-center bg-white border border-[#e9e9e9] shadow-lg rounded-lg'>
                                 <h1 className='text-[#244d3f] text-3xl font-semibold'>{friendDetail.days_since_contact}</h1>
                                 <p className='sec-color font-semibold'>Days Since Contact</p>

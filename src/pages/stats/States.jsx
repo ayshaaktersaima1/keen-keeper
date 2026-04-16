@@ -20,9 +20,9 @@ const States = () => {
     return (
         <div className='px-[1%] md:px-[14%]  bg-[#f8fafc]'>
 
-            <h1 className='text-5xl font-bold pt-20 pb-6'>Friendship Analytics</h1>
+            <h1 className='text-3xl md:text-5xl font-bold pt-10 md:pt-20 pb-3 md:pb-6'>Friendship Analytics</h1>
             <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-8 mb-20'>
-                <p className='text-xl font-medium text-[#244d3f]'>By Interaction Type</p>
+                <p className='text-xl text-center md:text-left font-medium text-[#244d3f]'>By Interaction Type</p>
 
                 {
                     checkIns.length === 0 ? <h1 className='text-center primary-color min-h-[40vh]'>No intercations logged yet.</h1> :

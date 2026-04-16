@@ -9,8 +9,8 @@ const TimelineCard = ({ checkIn }) => {
             {/* left */}
             <div>
                 {
-                    checkIn.type === 'Call' ? <img className='w-13 h-12' src={callImg} alt="" /> : checkIn.type === 'Text' ? <img className='w-13 h-12' src={textImg} alt="" /> :
-                        checkIn.type === 'Video' ? <img className='w-13 h-12' src={videoImg} alt="" /> : ''
+                    checkIn.type === 'Call' ? <img className='w-7 h-6 md:w-13 md:h-12' src={callImg} alt="" /> : checkIn.type === 'Text' ? <img className='w-7 h-6 md:w-13 md:h-12' src={textImg} alt="" /> :
+                        checkIn.type === 'Video' ? <img className='w-7 h-6 md:w-13 md:h-12' src={videoImg} alt="" /> : ''
                 }
             </div>
             {/* right */}
