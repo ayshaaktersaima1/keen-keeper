@@ -1,9 +1,13 @@
 import { FiPlus } from 'react-icons/fi';
 import UseFriends from '../../hooks/UseFriends';
+import { useContext } from 'react';
+import { FriendsContext } from '../../context/FriendsContextProvider';
 
 const Banner = () => {
 
     const { friends } = UseFriends();
+    const { checkIns } = useContext(FriendsContext);
+
     const onTrack = friends.filter(friend => friend.status === 'on-track');
     const needAttention = friends.filter(friend => friend.status === 'overdue' || friend.status === 'almost due');
     return (
@@ -31,7 +35,7 @@ const Banner = () => {
                     <p className='sec-color text-lg'>Need Attention</p>
                 </div>
                 <div className='flex-1 space-y-2 text-center py-8 border border-[#000000]/8 shadow-sm rounded-lg bg-white'>
-                    <h2 className='text-[#244D35] text-3xl font-semibold'>10</h2>
+                    <h2 className='text-[#244D35] text-3xl font-semibold'>{checkIns.length}</h2>
                     <p className='sec-color text-lg'>Interactions This Month</p>
                 </div>
             </div>

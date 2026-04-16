@@ -1,20 +1,36 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FriendsContext } from '../../context/FriendsContextProvider';
 import TimelineCard from './TimelineCard';
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import { TimelineContext } from '../../context/TimelineContextProvider';
 
 
 const Timeline = () => {
     const { checkIns } = useContext(FriendsContext);
+    const { timelineTypeCount, setTimelineTypeCount } = useContext(TimelineContext);
+
     const [filter, setFilter] = useState('Filter timeline');
 
     const handleFilter = (type) => {
         setFilter(type);
     }
 
+    const callType = checkIns.filter(checkIn => checkIn.type === 'Call');
+    const textType = checkIns.filter(checkIn => checkIn.type === 'Text');
+    const videoType = checkIns.filter(checkIn => checkIn.type === 'Video');
+
+    const callTypeCount = callType.length;
+    const textTypeCount = textType.length;
+    const videoTypeCount = videoType.length;
+
+    const newObj = { callTypeCount, textTypeCount, videoTypeCount };
+    useEffect(() => {
+        setTimelineTypeCount(newObj);
+    }, [checkIns]);
+
     const filterCheckIns = checkIns.filter(checkIn => checkIn.type === filter);
     return (
-        <div className='px-[1%] md:px-[14%] bg-[#f8fafc] py-17'>
+        <div className='px-[1%] md:px-[14%] bg-[#f8fafc] py-20'>
             <h1 className='primary-color text-5xl font-bold pb-6'>Timeline </h1>
 
             {/* dropdown */}
@@ -30,8 +46,9 @@ const Timeline = () => {
             <div className='space-y-6'>
                 {
                     filter === 'Filter timeline' ?
-                        (checkIns.map(checkIn => <TimelineCard checkIn={checkIn}></TimelineCard>)) :
-                        (filterCheckIns.map(checkIn => <TimelineCard checkIn={checkIn}></TimelineCard>))
+                        (checkIns.map((checkIn, index) => <TimelineCard key={index} checkIn={checkIn}></TimelineCard>)) :
+
+                        (filterCheckIns.map((checkIn, index) => <TimelineCard key={index} checkIn={checkIn}></TimelineCard>))
                 }
             </div>
         </div>

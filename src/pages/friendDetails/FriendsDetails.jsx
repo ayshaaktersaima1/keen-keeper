@@ -41,7 +41,7 @@ const FriendsDetails = () => {
 
                             <div className='flex justify-center gap-2 mb-3'>
                                 {
-                                    friendDetail.tags.map(tag => (<div className='badge uppercase bg-[#cbfadb] rounded-3xl text-[#244d3f] text-xs font-medium px-3'>{tag}</div>
+                                    friendDetail.tags.map((tag, index) => (<div key={index} className='badge uppercase bg-[#cbfadb] rounded-3xl text-[#244d3f] text-xs font-medium px-3'>{tag}</div>
                                     ))
                                 }
                             </div>

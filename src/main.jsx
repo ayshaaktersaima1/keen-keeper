@@ -9,6 +9,7 @@ import FriendsDetails from './pages/friendDetails/FriendsDetails.jsx';
 import Timeline from './pages/timeline/Timeline.jsx';
 import States from './pages/stats/States.jsx';
 import FriendsContextProvider from './context/FriendsContextProvider.jsx';
+import TimelineContextProvider from './context/TimelineContextProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,7 +41,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendsContextProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <TimelineContextProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </TimelineContextProvider>
     </FriendsContextProvider>
   </StrictMode>,
 )
