@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import UseFriends from '../../hooks/UseFriends';
 import { ScaleLoader } from 'react-spinners';
 import { RiDeleteBin5Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { FiArchive } from 'react-icons/fi';
-import callImg from '../../assets/images/call.png'
-import textImg from '../../assets/images/text.png'
-import videoImg from '../../assets/images/video.png'
+import { FriendsContext } from '../../context/FriendsContextProvider';
+import { LuPhoneCall, LuVideo } from 'react-icons/lu';
+import { MdOutlineTextsms } from 'react-icons/md';
+
 
 const FriendsDetails = () => {
     const { paramId } = useParams();
     const { friends, loading } = UseFriends();
+    const { checkIns, setCheckIns } = useContext(FriendsContext);
     if (loading) {
         return <ScaleLoader className='text-center py-10' />
     }
 
     const friendDetail = friends.find(friend => friend.id == paramId);
 
+    const handleCheckIn = (type) => {
+
+        const newCheckIn = {
+            ...friendDetail,
+            type
+        };
+        setCheckIns([...checkIns, newCheckIn]);
+    }
     return (
         <div>
             <div className='px-[1%] md:px-[14%]  bg-[#f8fafc] md:py-20'>
@@ -87,18 +97,18 @@ const FriendsDetails = () => {
 
                             <div className='grid grid-cols-3 gap-4'>
                                 {/* 1 */}
-                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
-                                    <div><img className='h-6 w-6' src={callImg} alt="" /></div>
+                                <div onClick={() => handleCheckIn('call')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><LuPhoneCall className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Call</h2>
                                 </div>
                                 {/* 2 */}
-                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
-                                    <div><img className='h-6 w-6' src={textImg} alt="" /></div>
+                                <div onClick={() => handleCheckIn('text')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><MdOutlineTextsms className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Text</h2>
                                 </div>
                                 {/* 3 */}
-                                <div className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
-                                    <div><img className='h-6 w-6' src={videoImg} alt="" /></div>
+                                <div onClick={() => handleCheckIn('video')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                    <div><LuVideo className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Video</h2>
                                 </div>
                             </div>
