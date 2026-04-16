@@ -12,9 +12,9 @@ const Navbar = () => {
                     <img src={logo} alt='logo'></img>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to={'/'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><RiHome2Line /></span>Home</NavLink>
-                    <NavLink to={'/timeline'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><RiTimeLine /> </span>Timeline</NavLink>
-                    <NavLink to={'/stats'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 ${isActive ? 'text-white font-semibold bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><ImStatsDots /></span>Stats</NavLink>
+                    <NavLink to={'/'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 font-medium ${isActive ? 'text-white bg-[#244D35]' : 'font-medium sec-color'}`}><span className='text-2xl'><RiHome2Line /></span>Home</NavLink>
+                    <NavLink to={'/timeline'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 ${isActive ? 'text-white bg-[#244D35]' : 'sec-color'}`}><span className='text-2xl'><RiTimeLine /> </span>Timeline</NavLink>
+                    <NavLink to={'/stats'} className={({ isActive }) => `btn btn-ghost rounded-sm flex justify-center items-center gap-1 mr-1 ${isActive ? 'text-white bg-[#244D35]' : 'sec-color'}`}><span className='text-2xl'><ImStatsDots /></span>Stats</NavLink>
                 </div>
             </div>
         </div>

@@ -97,17 +97,17 @@ const FriendsDetails = () => {
 
                             <div className='grid grid-cols-3 gap-4'>
                                 {/* 1 */}
-                                <div onClick={() => handleCheckIn('call')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                <div onClick={() => handleCheckIn('Call')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
                                     <div><LuPhoneCall className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Call</h2>
                                 </div>
                                 {/* 2 */}
-                                <div onClick={() => handleCheckIn('text')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                <div onClick={() => handleCheckIn('Text')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
                                     <div><MdOutlineTextsms className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Text</h2>
                                 </div>
                                 {/* 3 */}
-                                <div onClick={() => handleCheckIn('video')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
+                                <div onClick={() => handleCheckIn('Video')} className='hover:bg-[#d9d9d9] cursor-pointer flex flex-col justify-center items-center py-4 bg-[#f8fafc] border border-[#e9e9e9] shadow-sm rounded-lg'>
                                     <div><LuVideo className='h-6 w-6 primary-color' /></div>
                                     <h2 className='text-lg primary-color pt-2'>Video</h2>
                                 </div>
