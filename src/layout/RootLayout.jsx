@@ -12,7 +12,7 @@ const RootLayout = () => {
             <Outlet></Outlet>
             <Footer></Footer>
 
-            <ToastContainer></ToastContainer>
+            <ToastContainer position='top-center'></ToastContainer>
         </div>
     );
 };
