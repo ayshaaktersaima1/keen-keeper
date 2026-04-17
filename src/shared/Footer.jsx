@@ -8,7 +8,7 @@ const Footer = () => {
             <footer className="w-full footer footer-horizontal footer-center bg-[#244d3f] text-primary-content p-5 md:p-12">
                 <aside>
                     <h1 className='text-4xl md:text-7xl text-white font-semibold pb-4'>KeenKeeper</h1>
-                    <p className='text-white pb-6 w-auto md:w-[76%]'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                    <p className='text-white pb-6'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <div>
                         <h1 className='text-white text-xl font-medium pb-4'>Social Links</h1>
                         <nav>
