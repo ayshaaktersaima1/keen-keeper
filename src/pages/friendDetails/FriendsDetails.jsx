@@ -4,10 +4,10 @@ import UseFriends from '../../hooks/UseFriends';
 import { ScaleLoader } from 'react-spinners';
 import { RiDeleteBin5Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { FiArchive } from 'react-icons/fi';
-import { FriendsContext } from '../../context/FriendsContextProvider';
 import { LuPhoneCall, LuVideo } from 'react-icons/lu';
 import { MdOutlineTextsms } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import { FriendsContext } from '../../context/FriendsContext';
 
 
 const FriendsDetails = () => {

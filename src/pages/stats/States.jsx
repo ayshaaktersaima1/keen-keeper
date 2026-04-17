@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Pie, PieChart, Tooltip } from 'recharts';
-import { TimelineContext } from '../../context/TimelineContextProvider';
-import { FriendsContext } from '../../context/FriendsContextProvider';
+import { TimelineContext } from '../../context/TimelineContext';
+import { FriendsContext } from '../../context/FriendsContext';
 ;
 
 
 const States = () => {
 
-    const { timelineTypeCount } = useContext(TimelineContext);
+    const timelineTypeCount = useContext(TimelineContext);
     const { checkIns } = useContext(FriendsContext);
     const { callTypeCount, textTypeCount, videoTypeCount } = timelineTypeCount;
 
@@ -18,10 +18,10 @@ const States = () => {
 
     ];
     return (
-        <div className='px-[1%] md:px-[14%]  bg-[#f8fafc]'>
+        <div className='px-[1%] md:px-[14%]  bg-[#f8fafc] pb-10 md:pb-20'>
 
             <h1 className='text-3xl md:text-5xl font-bold pt-10 md:pt-20 pb-3 md:pb-6'>Friendship Analytics</h1>
-            <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-8 mb-20'>
+            <div className='border border-[#e9e9e9] shadow-lg rounded-lg p-8 bg-white'>
                 <p className='text-xl text-center md:text-left font-medium text-[#244d3f]'>By Interaction Type</p>
 
                 {

@@ -1,7 +1,7 @@
-import React, { createContext, useContext } from 'react';
-import { FriendsContext } from './FriendsContextProvider';
+import React, { useContext } from 'react';
+import { TimelineContext } from './TimelineContext';
+import { FriendsContext } from './FriendsContext';
 
-export const TimelineContext = createContext();
 
 const TimelineContextProvider = ({ children }) => {
 
@@ -13,7 +13,7 @@ const TimelineContextProvider = ({ children }) => {
         videoTypeCount: checkIns.filter(checkIn => checkIn.type === 'Video').length,
     }
 
-    return <TimelineContext.Provider value={{ timelineTypeCount }}>{children}</TimelineContext.Provider>;
+    return <TimelineContext.Provider value={timelineTypeCount}>{children}</TimelineContext.Provider>;
 
 };
 

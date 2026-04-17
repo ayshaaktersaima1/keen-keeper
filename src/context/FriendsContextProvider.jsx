@@ -1,6 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
+import { FriendsContext } from './FriendsContext';
 
-export const FriendsContext = createContext();
 
 const FriendsContextProvider = ({ children }) => {
 

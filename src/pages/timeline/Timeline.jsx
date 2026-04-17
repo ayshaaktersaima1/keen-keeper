@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { FriendsContext } from '../../context/FriendsContextProvider';
+import { FriendsContext } from '../../context/FriendsContext';
 import TimelineCard from './TimelineCard';
 import { RiArrowDropDownLine } from 'react-icons/ri';
+
 
 
 const Timeline = () => {

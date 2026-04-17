@@ -11,7 +11,7 @@
         ],
         "bio": "Met during university computer science classes. We still talk about tech and occasionally go hiking together.",
         "goal": 14,
-        "next_due_date": "2025-07-20"
+        "next_due_date": "Jul 20, 2026"
     },
     {
         "id": 2,
@@ -26,7 +26,7 @@
         ],
         "bio": "Worked together at a startup. She always shares amazing UI/UX ideas.",
         "goal": 14,
-        "next_due_date": "2025-07-22"
+        "next_due_date": "Jul 22, 2026"
     },
     {
         "id": 3,
@@ -40,7 +40,7 @@
         ],
         "bio": "Gym partner who keeps me motivated with workout challenges.",
         "goal": 14,
-        "next_due_date": "2025-07-30"
+        "next_due_date": "Jul 30, 2026"
     },
     {
         "id": 4,
@@ -55,7 +55,7 @@
         ],
         "bio": "Met while traveling in Thailand. We love discussing travel plans and photography.",
         "goal": 14,
-        "next_due_date": "2025-07-18"
+        "next_due_date": "Jul 18, 2026"
     },
     {
         "id": 5,
@@ -69,7 +69,7 @@
         ],
         "bio": "High school friend who now plays football in a local weekend league.",
         "goal": 14,
-        "next_due_date": "2025-07-21"
+        "next_due_date": "Jul 21, 2026"
     },
     {
         "id": 6,
@@ -84,7 +84,7 @@
         ],
         "bio": "Childhood neighbor and family friend. Our families still meet during holidays.",
         "goal": 14,
-        "next_due_date": "2025-08-02"
+        "next_due_date": "Aug 02, 2026"
     },
     {
         "id": 7,
@@ -98,7 +98,7 @@
         ],
         "bio": "Met at a tech meetup. Often shares great advice about startups and business.",
         "goal": 14,
-        "next_due_date": "2025-07-19"
+        "next_due_date": "Jul 19, 2026"
     },
     {
         "id": 8,
@@ -113,6 +113,6 @@
         ],
         "bio": "Friend from a book club. We exchange reading recommendations regularly.",
         "goal": 14,
-        "next_due_date": "2025-07-28"
+        "next_due_date": "Jul 28, 2026"
     }
 ]
