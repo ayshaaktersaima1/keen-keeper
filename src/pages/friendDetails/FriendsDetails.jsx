@@ -15,7 +15,12 @@ const FriendsDetails = () => {
     const { friends, loading } = UseFriends();
     const { checkIns, setCheckIns } = useContext(FriendsContext);
     if (loading) {
-        return <ScaleLoader className='text-center py-10' />
+        return (
+            <div className='flex justify-center items-center min-h-[50vh]'>
+                <ScaleLoader color='#244d3f' height={50} width={6} />
+            </div>
+        );
+
     }
 
     const friendDetail = friends.find(friend => friend.id == paramId);

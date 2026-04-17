@@ -13,7 +13,10 @@ const YourFriend = () => {
 
 
             {
-                loading ? (<ScaleLoader className='text-center' />) : (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                loading ? (<div className='flex justify-center items-center min-h-[40vh]'>
+                    <ScaleLoader color='#244d3f' height={50} width={6} />
+                </div>
+                ) : (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
 
                     {
                         friends.map(friend => <Card key={friend.id} friend={friend}></Card>)
